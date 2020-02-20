@@ -1,19 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import './Sign.css'
-import SunCalc from 'suncalc'
-import { GetSignTexts } from './GoldenHour'
+import { GetSignContent } from './SignContent'
 
 function Sign() {
   const [date, setDate] = useState(new Date())
   const [position, setPosition] = useState()
+  const [content, setContent] = useState(GetSignContent(date, position))
 
   useEffect(() => {
     const interval = setInterval(() => {
       setDate(new Date())
       setAsyncPosition()
+      setContent(GetSignContent(date, position))
     }, 1000)
     return () => clearInterval(interval)
-  }, [])
+  })
 
   const setAsyncPosition = (() => { navigator.geolocation.getCurrentPosition(
     position => setPosition(position),
@@ -23,9 +24,11 @@ function Sign() {
   return (
     <div className="Sign">
       <header className="Sign-header">
-        <p>suggestion: {GetSignTexts(date, position).suggestion}</p>
-        <p>information: {GetSignTexts(date, position).information}</p>
-        <p>time: {GetSignTexts(date, position).time}</p>
+        <p>suggestion: {content.suggestion}</p>
+        <p>information: {content.information}</p>
+        <p>timer: {content.timer}</p>
+        <p>isGoldenHour: {content.isGoldenHour}</p>
+        <p>goldenHourPercent: {content.goldenHourPercent}</p>
       </header>
     </div>
   )
