@@ -1,16 +1,14 @@
-.App {
+.Footer {
   text-align: center;
-  background-color: #155263;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 10vh;
 }
 
-/*
-#155263
-#ff6f3c
-#ff9a3c
-#ffc93c
-*/
+.Footer-footer {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  color: #ff9a3c;
+}
+
