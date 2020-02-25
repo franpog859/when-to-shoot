@@ -2,14 +2,16 @@ import React from 'react'
 import './App.css'
 import Ad from './Ad/Ad'
 import Sign from './Sign/Sign'
-import Footer from './Footer/Footer'
+import ToggleBar from './ToggleBar/ToggleBar'
+import About from './About/About'
 
 function App() {
   return (
     <div className="App">
       <Ad />
       <Sign />
-      <Footer />
+      <ToggleBar />
+      <About />
     </div>
   )
 }
