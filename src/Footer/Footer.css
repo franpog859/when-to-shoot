@@ -1,9 +1,9 @@
-.About {
+.Footer {
   text-align: center;
-  min-height: 40vh;
+  min-height: 10vh;
 }
 
-.About-header {
+.Footer-header {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
