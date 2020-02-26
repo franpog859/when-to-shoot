@@ -90,10 +90,14 @@ function YesGoldenHourResponse(date: Date, goldenHourStart: Date, goldenHourEnd:
     return {
         suggestion: 'Right now!',
         information: 'Golden hour ends at ' + goldenHourEnd.toLocaleTimeString('en-US'),
-        timer: new Date(goldenHourEnd.getTime() - date.getTime()).toLocaleTimeString('en-GB'),
+        timer: GetTimer(date, goldenHourEnd),
         isGoldenHour: true,
         goldenHourPercent: GetDatePercent(date, goldenHourStart, goldenHourEnd)
     }
+}
+
+function GetTimer(start: Date, end: Date): string {
+    return new Date(end.getTime() - start.getTime() - (1000 * 60 * 60 * 1)).toLocaleTimeString('en-GB')
 }
 
 function GetDatePercent(date: Date, goldenHourStart: Date, goldenHourEnd: Date): number {
@@ -105,7 +109,7 @@ function NoGoldenHourPreviousDayResponse(date: Date, goldenHourStart: Date, gold
     return {
         suggestion: 'Wait for it...',
         information: 'Golden hour starts at ' + goldenHourStart.toLocaleTimeString('en-US'),
-        timer: new Date(goldenHourStart.getTime() - date.getTime()).toLocaleTimeString('en-GB'),
+        timer: GetTimer(date, goldenHourStart),
         isGoldenHour: false,
         goldenHourPercent: GetDatePercent(date, previousEveningGoldenHourEnd, goldenHourStart)
     }
@@ -115,7 +119,7 @@ function NoGoldenHourResponse(date: Date, goldenHourStart: Date, goldenHourEnd: 
     return {
         suggestion: 'Wait for it...',
         information: 'Golden hour starts at ' + goldenHourStart.toLocaleTimeString('en-US'),
-        timer: new Date(goldenHourStart.getTime() - date.getTime()).toLocaleTimeString('en-GB'),
+        timer: GetTimer(date, goldenHourStart),
         isGoldenHour: false,
         goldenHourPercent: GetDatePercent(date, goldenHourEnd, goldenHourStart)
     }
@@ -126,7 +130,7 @@ function NoGoldenHourNextDayResponse(date: Date, goldenHourStart: Date, goldenHo
     return {
         suggestion: 'Wait for it...',
         information: 'Golden hour starts at ' + nextMorningGoldenHourStart.toLocaleTimeString('en-US'),
-        timer: new Date(nextMorningGoldenHourStart.getTime() - date.getTime()).toLocaleTimeString('en-GB'),
+        timer: GetTimer(date, nextMorningGoldenHourStart),
         isGoldenHour: false,
         goldenHourPercent: GetDatePercent(date, goldenHourEnd, goldenHourStart)
     }
