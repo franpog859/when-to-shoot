@@ -11,10 +11,10 @@ function Footer() {
     <div className="Footer">
       <header className="Footer-header">
         <p>
-          <a href="https://github.com/franpog859" target="_blank">
+          <a href="https://github.com/franpog859" target="_blank" rel="noopener noreferrer">
             <Icon icon={githubFilled} className="Icon" />
           </a>
-          <a href="https://www.linkedin.com/in/franciszekpogodzinski/" target="_blank">
+          <a href="https://www.linkedin.com/in/franciszekpogodzinski/" target="_blank" rel="noopener noreferrer">
             <Icon icon={linkedinFilled} className="Icon" />
           </a>
         </p>

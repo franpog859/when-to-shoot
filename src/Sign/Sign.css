@@ -1,5 +1,9 @@
 .Sign {
   text-align: center;
+
+  animation-timing-function: ease-out;
+  animation: fade-in 700ms;
+  transition: all 700ms ease-in-out;
 }
 
 .Sign-header {
@@ -9,6 +13,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #ffc93c;
+}
+
+.Sign-text {
+  width: 217px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #155263;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

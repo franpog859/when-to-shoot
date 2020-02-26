@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import './Sign.css'
 import { GetSignContent } from './SignContent'
+import 'react-circular-progressbar/dist/styles.css';
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 
 function Sign() {
   const [date, setDate] = useState(new Date())
@@ -24,11 +26,23 @@ function Sign() {
   return (
     <div className="Sign">
       <header className="Sign-header">
-        <p>suggestion: {content.suggestion}</p>
-        <p>information: {content.information}</p>
-        <p>timer: {content.timer}</p>
-        <p>isGoldenHour: {content.isGoldenHour}</p>
-        <p>goldenHourPercent: {content.goldenHourPercent}</p>
+        <CircularProgressbarWithChildren 
+          value={66} 
+          background 
+          backgroundPadding={2} 
+          strokeWidth={1} 
+          styles={buildStyles({
+            pathColor: '#ffc93c',
+            trailColor: '#ff6f3c',
+            backgroundColor: "#ff9a3c",
+            textColor: '#155263',
+        })}>
+          <div className="Sign-text">
+            <p>{content.suggestion}</p>
+            <p>{content.information}</p>
+            <p>{content.timer}</p>
+          </div>
+        </CircularProgressbarWithChildren>
       </header>
     </div>
   )
