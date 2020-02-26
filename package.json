@@ -39,6 +39,8 @@
     ]
   },
   "devDependencies": {
+    "@iconify/icons-ant-design": "^1.0.6",
+    "@iconify/react": "^1.1.2",
     "prettier": "^1.19.1"
   }
 }
