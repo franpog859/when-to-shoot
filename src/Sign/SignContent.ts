@@ -96,6 +96,11 @@ function YesGoldenHourResponse(date: Date, goldenHourStart: Date, goldenHourEnd:
     }
 }
 
+function GetClockTime(date: Date): string {
+    const secondsRegex = /:[0-9]+\s/
+    return date.toLocaleTimeString('en-US').replace(secondsRegex, ' ')
+}
+
 function GetTimer(start: Date, end: Date): string {
     return new Date(end.getTime() - start.getTime() - (1000 * 60 * 60 * 1)).toLocaleTimeString('en-GB')
 }
@@ -129,10 +134,10 @@ function NoGoldenHourNextDayResponse(date: Date, goldenHourStart: Date, goldenHo
     const nextMorningGoldenHourStart = new Date(goldenHourStart.getTime() + (1000 * 60 * 60 * 24))
     return {
         suggestion: 'Wait for it...',
-        information: 'Golden hour starts at ' + nextMorningGoldenHourStart.toLocaleTimeString('en-US'),
+        information: 'Golden hour starts at ' + GetClockTime(nextMorningGoldenHourStart),
         timer: GetTimer(date, nextMorningGoldenHourStart),
         isGoldenHour: false,
-        goldenHourPercent: GetDatePercent(date, goldenHourEnd, goldenHourStart)
+        goldenHourPercent: GetDatePercent(date, goldenHourEnd, nextMorningGoldenHourStart)
     }
 }
 

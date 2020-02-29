@@ -2,6 +2,7 @@
   "name": "when-to-shoot",
   "version": "0.1.1",
   "private": true,
+  "homepage": "https://franpog859.github.io/when-to-shoot",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
@@ -11,6 +12,7 @@
     "@types/react": "^16.9.20",
     "@types/react-dom": "^16.9.5",
     "@types/suncalc": "^1.8.0",
+    "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-circular-progressbar": "^2.0.3",
     "react-dom": "^16.12.0",
@@ -22,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
