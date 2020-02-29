@@ -89,7 +89,7 @@ function NoGoldenHourNoPositionResponse(): SignContent {
 function YesGoldenHourResponse(date: Date, goldenHourStart: Date, goldenHourEnd: Date): SignContent {
     return {
         suggestion: 'Right now!',
-        information: 'Golden hour ends at ' + goldenHourEnd.toLocaleTimeString('en-US'),
+        information: 'Golden hour ends at ' + GetClockTime(goldenHourEnd),
         timer: GetTimer(date, goldenHourEnd),
         isGoldenHour: true,
         goldenHourPercent: GetDatePercent(date, goldenHourStart, goldenHourEnd)
@@ -113,7 +113,7 @@ function NoGoldenHourPreviousDayResponse(date: Date, goldenHourStart: Date, gold
     const previousEveningGoldenHourEnd = new Date(goldenHourEnd.getTime() - (1000 * 60 * 60 * 24))
     return {
         suggestion: 'Wait for it...',
-        information: 'Golden hour starts at ' + goldenHourStart.toLocaleTimeString('en-US'),
+        information: 'Golden hour starts at ' + GetClockTime(goldenHourStart),
         timer: GetTimer(date, goldenHourStart),
         isGoldenHour: false,
         goldenHourPercent: GetDatePercent(date, previousEveningGoldenHourEnd, goldenHourStart)
@@ -123,7 +123,7 @@ function NoGoldenHourPreviousDayResponse(date: Date, goldenHourStart: Date, gold
 function NoGoldenHourResponse(date: Date, goldenHourStart: Date, goldenHourEnd: Date): SignContent {
     return {
         suggestion: 'Wait for it...',
-        information: 'Golden hour starts at ' + goldenHourStart.toLocaleTimeString('en-US'),
+        information: 'Golden hour starts at ' + GetClockTime(goldenHourStart),
         timer: GetTimer(date, goldenHourStart),
         isGoldenHour: false,
         goldenHourPercent: GetDatePercent(date, goldenHourEnd, goldenHourStart)
