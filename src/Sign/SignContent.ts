@@ -80,8 +80,8 @@ function GetGoldenHours(date: Date, position: Position): GoldenHourTimes {
 
 function NoGoldenHourNoPositionResponse(): SignContent {
     return {
-        suggestion: 'Enable location!',
-        information: 'I need to know it to get to know your golden hour!',
+        suggestion: 'Allow location!',
+        information: 'Click on the lock near the website address!',
         isGoldenHour: false
     }
 }
