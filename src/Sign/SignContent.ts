@@ -1,6 +1,6 @@
 import SunCalc from 'suncalc'
 
-interface SignContent {
+export interface SignContent {
     suggestion: string;
     information: string;
     isGoldenHour: boolean;

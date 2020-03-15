@@ -8,14 +8,14 @@ import githubFilled from '@iconify/icons-ant-design/github-filled';
 
 function Footer() {
   return (
-    <div className="Footer">
-      <header className="Footer-header">
+    <div className='Footer' data-testid='Footer'>
+      <header className='Footer-header'>
         <p>
-          <a href="https://github.com/franpog859" target="_blank" rel="noopener noreferrer">
-            <Icon icon={githubFilled} className="Icon" />
+          <a href='https://github.com/franpog859' target='_blank' rel='noopener noreferrer'>
+            <Icon icon={githubFilled} className='Icon' />
           </a>
-          <a href="https://www.linkedin.com/in/franciszekpogodzinski/" target="_blank" rel="noopener noreferrer">
-            <Icon icon={linkedinFilled} className="Icon" />
+          <a href='https://www.linkedin.com/in/franciszekpogodzinski/' target='_blank' rel='noopener noreferrer'>
+            <Icon icon={linkedinFilled} className='Icon' />
           </a>
         </p>
       </header>
