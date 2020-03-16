@@ -9,8 +9,8 @@ When do you always take perfect shots? At the golden hour! Get your gear and [th
 <p align="center">
 <table cellspacing="0" cellpadding="0">
   <tr>
-    <th scope="col"><img src="https://raw.githubusercontent.com/franpog859/when-to-shoot/master/assets/animate1.png"></th>
-    <th scope="col"><img src="https://raw.githubusercontent.com/franpog859/when-to-shoot/master/assets/animate2.png"></th>
+    <th scope="col"><img src="https://raw.githubusercontent.com/franpog859/when-to-shoot/master/assets/animate1.gif"></th>
+    <th scope="col"><img src="https://raw.githubusercontent.com/franpog859/when-to-shoot/master/assets/animate2.gif"></th>
   </tr>
 </table>
 </p>
