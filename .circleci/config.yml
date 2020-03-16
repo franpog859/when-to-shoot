@@ -12,6 +12,16 @@ jobs:
             - run: npm install
             - run: npm test
 workflows:
-    build-and-test:
+    commit:
+      jobs:
+        - build-and-test
+    weekly:
+      triggers:
+        - schedule:
+            cron: "0 0 * * 1"
+            filters:
+              branches:
+                only:
+                - master
       jobs:
         - build-and-test
